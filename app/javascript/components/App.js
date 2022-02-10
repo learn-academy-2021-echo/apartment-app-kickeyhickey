@@ -21,6 +21,7 @@ class App extends Component {
     }
   }
   render() {
+    console.log(this.state.apartments);
     const {
       logged_in,
       current_user,
@@ -30,12 +31,12 @@ class App extends Component {
     } = this.props
     return (
       <>
-      
       <Router>
           <Header {...this.props}/>    
             <Switch>
                <Route exact path="/" component={Home} />
-               <Route exact path="/apartment-index" component={ApartmentIndex} />  
+               <Route exact path="/apartment-index"
+                render={(props) => <ApartmentIndex apartments={this.state.apartments} /> } />  
             </Switch>
       </Router>
       </>
