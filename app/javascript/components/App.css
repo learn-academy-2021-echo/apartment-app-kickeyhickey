@@ -1,0 +1,15 @@
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}

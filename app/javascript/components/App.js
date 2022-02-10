@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
+import Header from './components/Header'
+import './App.css'
+import Home from './pages/Home'
+import ApartmentIndex from './pages/ApartmentIndex'
+import mockApartments from '../mockApartments'
 
-export default class App extends Component {
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Switch
+} from 'react-router-dom'
+import { NavItem } from 'reactstrap'
+
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      apartments: mockApartments
+    }
+  }
   render() {
     const {
       logged_in,
@@ -9,15 +28,18 @@ export default class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log("logged_in:", logged_in);
-    console.log("current_user:", current_user);
-    console.log("new_user_route:", new_user_route);
-    console.log("sign_in_route:", sign_in_route);
-    console.log("sign_out_route:", sign_out_route);
     return (
       <>
-      <h1>hello world</h1>
+      
+      <Router>
+          <Header {...this.props}/>    
+            <Switch>
+               <Route exact path="/" component={Home} />
+               <Route exact path="/apartment-index" component={ApartmentIndex} />  
+            </Switch>
+      </Router>
       </>
     )
   }
 }
+export default App
