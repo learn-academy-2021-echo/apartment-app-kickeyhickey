@@ -10,8 +10,10 @@ export default class ApartmentIndex extends Component {
   render() {
     return (
       <>
-        <h3>Index</h3>
-      
+      <h2>All Available Apartments</h2>
+      {this.props.apartments.map(value =>{
+        return <p key={value.user_id}>{value.street}</p>
+      })}
       </>
     )
   }

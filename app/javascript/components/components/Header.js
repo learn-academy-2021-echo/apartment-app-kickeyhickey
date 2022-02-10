@@ -17,11 +17,9 @@ class Header extends Component {
       sign_out_route
     } = this.props
     return (
-      
-      
         <header>
           <div className='nav-bar'>
-            <NavLink to="/apartmentindex" className="nav-link">
+            <NavLink to="/apartment-index" className="nav-link">
               All Apartments
             </NavLink>
           </div>
@@ -30,29 +28,18 @@ class Header extends Component {
               {/* <img src={logo} alt="apartment logo" className='logo' />d */}
             </NavLink>
         </div>
-
           <div className='nav-bar'>
-
-
           {logged_in &&
-          
             <a href={sign_out_route} className='nav-link'>Sign Out</a>
-          
         }
         {!logged_in &&
-          
             <a href={sign_in_route} className='nav-link' >Sign In</a>
-          
         }
         {!logged_in &&
-          
           <a href={new_user_route} className='nav-link' >Sign Up</a>
-          
           }
         </div>
         </header>
-        
-      
     )
   }
 }
