@@ -1,6 +1,6 @@
 let apartments = [
   {
-    user_id: 1,
+    id: 1,
     pets: "cats only",
     bathrooms: 3,
     bedrooms: 3,
@@ -13,7 +13,7 @@ let apartments = [
 
   },
   {
-    user_id: 1,
+    id: 2,
     pets: "cats only",
     bathrooms: 1,
     bedrooms: 1,
@@ -26,7 +26,7 @@ let apartments = [
   },
   {
     
-      user_id: 1,
+      id: 3,
       pets: "cats only",
       bathrooms: 4,
       bedrooms: 1,

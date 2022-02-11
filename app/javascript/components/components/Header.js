@@ -19,13 +19,13 @@ class Header extends Component {
     return (
         <header>
           <div className='nav-bar'>
-            <NavLink to="/apartment-index" className="nav-link">
+            <NavLink to="/apartmentindex" className="nav-link">
               All Apartments
             </NavLink>
           </div>
         <div className='nav-bar'>
             <NavLink to="/">
-              {/* <img src={logo} alt="apartment logo" className='logo' />d */}
+              <img src={logo} alt="apartment logo" className='logo' height="80px"/>
             </NavLink>
         </div>
           <div className='nav-bar'>
