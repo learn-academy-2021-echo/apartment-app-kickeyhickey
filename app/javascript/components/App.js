@@ -3,7 +3,8 @@ import Header from './components/Header'
 import './App.css'
 import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
-import mockApartments from '../mockApartments'
+import mockapartments from './mockApartments'
+import ApartmentShow from './pages/ApartmentShow'
 
 import {
   BrowserRouter as Router,
@@ -11,13 +12,13 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import { NavItem } from 'reactstrap'
+
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apartments: mockApartments
+      apartments: mockapartments  
     }
   }
   render() {
@@ -29,17 +30,23 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
+    const { apartments } = this.state
     return (
-      <>
       <Router>
           <Header {...this.props}/>    
             <Switch>
                <Route exact path="/" component={Home} />
-               <Route exact path="/apartment-index"
-                render={(props) => <ApartmentIndex apartments={this.state.apartments} /> } />  
+               <Route path="/apartmentindex"
+                render={(props) => <ApartmentIndex apartments={apartments} /> }
+                 />  
+              <Route path="/apartmentshow/:id" render={(props) => {
+               let id = props.match.params.id
+               let apartment = apartments.find(apt => apt.id === +id)
+              return <ApartmentShow apartment={apartment} />
+                }} />
             </Switch>
       </Router>
-      </>
+      
     )
   }
 }
